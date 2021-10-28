@@ -1,25 +1,25 @@
-// Initialize butotn with users's prefered color
-let changeColor = document.getElementById("changeColor");
+// Initialize butotn with users's prefered image
+let changeImage = document.getElementById("changeImage");
 
 //button style
-chrome.storage.sync.get("color", ({ color }) => {
-  changeColor.style.backgroundColor = color;
+chrome.storage.sync.get("image", ({ image }) => {
+  changeImage.style.backgroundImage = image;
 });
 
-// When the button is clicked, inject setPageBackgroundColor into current page
-changeColor.addEventListener("click", async () => {
+// When the button is clicked, inject setPageBackgroundimage into current page
+changeImage.addEventListener("click", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    function: setPageBackgroundColor,
+    function: setPageBackgroundImage,
   });
 });
 
 // The body of this function will be execuetd as a content script inside the
 // current page
-function setPageBackgroundColor() {
-  chrome.storage.sync.get("color", ({ color }) => {
-    document.body.style.backgroundColor = color;
+function setPageBackgroundImage() {
+  chrome.storage.sync.get("image", ({ image }) => {
+    document.body.style.backgroundImage = image;
   });
 }
