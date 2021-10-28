@@ -1,6 +1,6 @@
 let page = document.getElementById("buttons");
 let selectedClassName = "current";
-const themeButtons = ["#3aa757", "#e8453c", "#f9bb2d", "#4688f1"];
+const themeButtons = ["#3aa757", "#e8453c", "#f9bb2d", "#4688f1"];//change to pics
 
 // Reacts to a button click by marking marking the selected button and saving
 // the selection
@@ -25,10 +25,10 @@ function constructOptions(buttonColors) {
     let currentColor = data.color;
 
     // For each color we were provided…
-    for (let buttonColor of buttonColors) {
+    for (let buttonColor of buttonColors) {//iterates through buttons
       // …crate a button with that color…
-      let button = document.createElement("button");
-      button.dataset.color = buttonColor;
+      let button = document.createElement("button");//make a button for each one
+      button.dataset.color = buttonColor;//change to image for themes
       button.style.backgroundColor = buttonColor;
 
       // …mark the currently selected color…
@@ -44,4 +44,5 @@ function constructOptions(buttonColors) {
 }
 
 // Initialize the page by constructing the color options
-constructOptions(themeButtons);
+
+constructOptions(themeButtons);//makes list of buttons
