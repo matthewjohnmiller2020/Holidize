@@ -1,6 +1,6 @@
 let page = document.getElementById("buttons");
 let selectedClassName = "current";
-const themeButtons = ["url('/images/comboSkeleton.gif')"];//change to pics
+const themeButtons = ["url('chrome-extension://Holidize/images/comboSkeleton.gif')"];//change to pics
 
 // Reacts to a button click by marking marking the selected button and saving
 // the selection
